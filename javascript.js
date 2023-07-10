@@ -12,5 +12,19 @@ function getComputerChoice() {
     return item
 }
 
-cp_choice = getComputerChoice()
-alert(cp_choice)
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
+function play(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {return alert(`The computer chose ${computerSelection}. It's a tie!`)}
+    else if ((playerSelection === "rock" && computerSelection ==="paper") | (playerSelection === "scissors" && computerSelection === "rock") 
+    | (playerSelection === "paper" && computerSelection === "scissors")) {return alert(`Defeat! ${computerSelection.capitalizeFirstLetter()} beats ${playerSelection}.`)}
+    else if ((computerSelection === "rock" && playerSelection ==="paper") | (computerSelection === "scissors" && playerSelection === "rock") 
+    | (computerSelection === "paper" && playerSelection === "scissors")) {return alert(`Victory! ${playerSelection.capitalizeFirstLetter()} beats ${computerSelection}.`)}
+}
+
+playerSelection = prompt("Choose: rock, paper, or scissors?").toLowerCase()
+computerSelection = getComputerChoice().toLowerCase()
+play(playerSelection, computerSelection)
