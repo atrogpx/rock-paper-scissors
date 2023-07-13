@@ -17,17 +17,6 @@ function capitalizeFirstLetter(string) {
 }
 
 score = 0
-/* function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {return alert(`The computer chose ${computerSelection}. It's a tie!`)}
-
-    else if ((playerSelection === "rock" && computerSelection ==="paper") | (playerSelection === "scissors" && computerSelection === "rock") 
-    | (playerSelection === "paper" && computerSelection === "scissors")) {return alert(`Defeat! ${computerSelection.capitalizeFirstLetter()} beats ${playerSelection}.`)}
-
-    else if ((computerSelection === "rock" && playerSelection ==="paper") | (computerSelection === "scissors" && playerSelection === "rock") 
-    | (computerSelection === "paper" && playerSelection === "scissors")) {return alert(`Victory! ${playerSelection.capitalizeFirstLetter()} beats ${computerSelection}.`)}
-} */
-
-
 
 function game() {
     let playerSelection = prompt("Choose: rock, paper, or scissors?").toLowerCase()
