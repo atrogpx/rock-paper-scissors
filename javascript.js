@@ -16,15 +16,34 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-
-function play(playerSelection, computerSelection) {
+score = 0
+/* function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {return alert(`The computer chose ${computerSelection}. It's a tie!`)}
+
     else if ((playerSelection === "rock" && computerSelection ==="paper") | (playerSelection === "scissors" && computerSelection === "rock") 
     | (playerSelection === "paper" && computerSelection === "scissors")) {return alert(`Defeat! ${computerSelection.capitalizeFirstLetter()} beats ${playerSelection}.`)}
+
     else if ((computerSelection === "rock" && playerSelection ==="paper") | (computerSelection === "scissors" && playerSelection === "rock") 
     | (computerSelection === "paper" && playerSelection === "scissors")) {return alert(`Victory! ${playerSelection.capitalizeFirstLetter()} beats ${computerSelection}.`)}
+} */
+
+
+
+function game() {
+    let playerSelection = prompt("Choose: rock, paper, or scissors?").toLowerCase()
+    let computerSelection = getComputerChoice().toLowerCase()
+    return function(playerSelection, computerSelection) {
+        if (playerSelection === computerSelection) {return alert(`The computer chose ${computerSelection}. It's a tie!`)}
+
+        else if ((playerSelection === "rock" && computerSelection ==="paper") | (playerSelection === "scissors" && computerSelection === "rock") 
+        | (playerSelection === "paper" && computerSelection === "scissors")) {return alert(`Defeat! ${computerSelection.capitalizeFirstLetter()} beats ${playerSelection}.`)}
+    
+        else if ((computerSelection === "rock" && playerSelection ==="paper") | (computerSelection === "scissors" && playerSelection === "rock") 
+        | (computerSelection === "paper" && playerSelection === "scissors")) {return alert(`Victory! ${playerSelection.capitalizeFirstLetter()} beats ${computerSelection}.`)}
+    };
 }
 
-playerSelection = prompt("Choose: rock, paper, or scissors?").toLowerCase()
-computerSelection = getComputerChoice().toLowerCase()
-play(playerSelection, computerSelection)
+for (let step = 0; step < 5; step++) {
+    let play = game()
+    play()
+  }
