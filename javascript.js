@@ -29,9 +29,15 @@ function scissorsChosen() {
     playRound("scissors", computerSelection);
 }
 
-// select result div, show the results in result div
-
 //go on until one of the players reaches 5 points
+
+function gameOver() {
+    rock_btn.removeEventListener("click", rockChosen);
+    paper_btn.removeEventListener("click", paperChosen);
+    scissors_btn.removeEventListener("click", scissorsChosen);
+    result.textContent = "Game Over."
+    announceWinner(playerScore, computerScore);
+}
 
 // Program to return randomly r, p, s
 
@@ -57,7 +63,10 @@ function capitalizeFirstLetter(string) {
 // playerSelection gets case insensitive
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) 
+    if (playerScore >= 5 || computerScore >= 5) {
+        gameOver();
+    }
+    else if (playerSelection === computerSelection) 
         {result.textContent = `The computer chose ${computerSelection}. It's a tie!
         Your score: ${playerScore}
         Computer score: ${computerScore}`}
